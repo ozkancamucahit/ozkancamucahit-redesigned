@@ -23,16 +23,17 @@ to GitHub Pages.
 
 1. Push the repository to GitHub.
 2. In **Settings → Pages**, set **Source** to **GitHub Actions**.
-3. Push to `main`, or run **Deploy to GitHub Pages** manually from the **Actions** tab.
-4. Open the deployment URL shown in the workflow run or in **Settings → Pages**.
+3. In **Settings → Environments → github-pages**, review **Deployment branches and tags**.
+   Allow the `main` branch, or remove the branch restriction for this environment.
+4. Push to `main`, or run **Deploy to GitHub Pages** manually from the **Actions** tab.
+5. Open the deployment URL shown in the workflow run or in **Settings → Pages**.
 
-This project is already configured for the custom domain `https://mucahito.dev`.
-To use that domain, add `mucahito.dev` as the custom domain in **Settings → Pages**,
-then create the DNS records required by GitHub:
+The `github-pages` environment is used by the workflow's deploy job. If it has
+protection rules, GitHub must explicitly allow the branch that triggered the
+workflow. Otherwise the build succeeds but the deployment is rejected with:
+`Branch "main" is not allowed to deploy to github-pages`.
 
-- Apex `A` records for `mucahito.dev` pointing to GitHub Pages:
-  `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, and `185.199.111.153`.
-- A `CNAME` record for `www.mucahito.dev` pointing to the GitHub Pages hostname.
-
-If you do not want to use the custom domain, update `url` and `baseUrl` in
-`docusaurus.config.ts` to match the GitHub Pages project URL before deploying.
+The site is configured for this project Pages URL:
+`https://ozkancamucahit.github.io/ozkancamucahit-redesigned/`.
+The repository name is part of `baseUrl` in `docusaurus.config.ts`; keep that
+path when deploying this repository as a project site.
