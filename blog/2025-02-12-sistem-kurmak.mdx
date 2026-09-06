@@ -1,0 +1,26 @@
+---
+slug: sistem-kurmak
+title: Sistem kurmak, özellik eklemekten daha zor
+description: Bir projeyi büyütürken kararların neden kod kadar önemli olduğunu yeniden öğrendim.
+authors: [mucahito]
+tags: [düşünceler, süreç]
+---
+
+Bir projeye yeni bir özellik eklemek çoğu zaman kolaydır. Zor olan, o özelliğin yarın da anlaşılabilir kalacağı bir sistem kurmaktır.
+
+<!-- truncate -->
+
+## Küçük kararların toplamı
+
+Her karar bir sonraki kararı biraz daha kolaylaştırmalı. Bunun için önce isimleri, sınırları ve hata durumlarını yazıyorum.
+
+```ts title="TypeScript"
+type Decision = {
+  context: string;
+  options: string[];
+  chosen: string;
+  tradeoff: string;
+};
+```
+
+Kod yazmadan önce bu dört satırı doldurmak, özellikle hızlı büyüyen projelerde şaşırtıcı bir netlik sağlıyor.

@@ -1,0 +1,26 @@
+---
+slug: testing-as-design
+title: Testing is a design tool
+description: What happens when tests stop being a safety net and start shaping the interface?
+authors: [mucahito]
+tags: [craft, testing]
+---
+
+Tests are usually described as a safety net. I have started to think of them as a design tool instead: a way to make the shape of a product explicit.
+
+<!-- truncate -->
+
+## The interface of a decision
+
+When a function is difficult to test, that friction is often telling us something about its boundaries.
+
+```ts title="TypeScript"
+const result = await createProject({
+  name: 'notes',
+  visibility: 'private',
+});
+
+expect(result.status).toBe('created');
+```
+
+The best tests make tomorrow's code easier to read.

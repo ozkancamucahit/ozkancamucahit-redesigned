@@ -1,0 +1,22 @@
+{
+  "title": {
+    "message": "mucahito.dev",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Mucahito",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Home": {
+    "message": "Ana sayfa",
+    "description": "Navbar item with label Home"
+  },
+  "item.label.Writing": {
+    "message": "Yazılar",
+    "description": "Navbar item with label Writing"
+  },
+  "item.label.GitHub ↗": {
+    "message": "GitHub ↗",
+    "description": "Navbar item with label GitHub ↗"
+  }
+}

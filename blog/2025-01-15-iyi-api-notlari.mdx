@@ -1,0 +1,22 @@
+---
+slug: iyi-api-notlari
+title: İyi bir API için tuttuğum küçük notlar
+description: İsimlendirme, hata mesajları ve dokümantasyon arasında beklenmedik bir ortaklık var.
+authors: [mucahito]
+tags: [backend, api]
+---
+
+API tasarımı, başka insanların zihninde oluşturduğunuz bir haritadır. İyi haritalar kısa, belirgin ve yanlış yola sapanlara yardım eder.
+
+<!-- truncate -->
+
+## Hata da bir arayüzdür
+
+Bir hata mesajı yalnızca neyin yanlış olduğunu değil, sırada ne yapılabileceğini de söylemeli.
+
+```ts title="TypeScript"
+return Response.json(
+  {code: 'INVALID_SLUG', message: 'Slug must contain lowercase letters and dashes.'},
+  {status: 422},
+);
+```

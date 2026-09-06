@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "Writing",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "Developer notes, project retrospectives, and practical lessons.",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "Latest writing",
+    "description": "The label for the left sidebar"
+  }
+}
