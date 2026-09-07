@@ -11,3 +11,24 @@ Adding a feature is usually straightforward. The harder work is building a syste
 <!-- truncate -->
 
 Every decision should make the next decision a little easier. I start by writing down names, boundaries, and failure states before writing code.
+
+## An example: selecting a service by channel
+
+The code block should make the same decisions visible: the language, line
+numbers, and copy interaction should be clear at a glance.
+
+```csharp title="NotificationFactory.cs"
+public sealed class NotificationFactory(IServiceProvider provider)
+{
+    public INotificationSender Create(string channel) => channel switch
+    {
+        "email" => provider.GetRequiredService<EmailSender>(),
+        "sms" => provider.GetRequiredService<SmsSender>(),
+        "push" => provider.GetRequiredService<PushSender>(),
+        _ => throw new ArgumentException($"Unknown channel: {channel}")
+    };
+}
+```
+
+The title, language label, line numbers, and `Copy` button are added by the
+theme automatically. The post only needs a standard fenced code block.
