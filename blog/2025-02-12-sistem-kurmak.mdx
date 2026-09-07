@@ -24,3 +24,25 @@ type Decision = {
 ```
 
 Kod yazmadan önce bu dört satırı doldurmak, özellikle hızlı büyüyen projelerde şaşırtıcı bir netlik sağlıyor.
+
+## Bir örnek: kanala göre servis seçmek
+
+Kod bloğu da aynı kararları görünür kılmalı: hangi dilde olduğumuzu, satırları
+ve kopyalama davranışını ilk bakışta anlamalıyız.
+
+```csharp title="NotificationFactory.cs"
+public sealed class NotificationFactory(IServiceProvider provider)
+{
+    public INotificationSender Create(string channel) => channel switch
+    {
+        "email" => provider.GetRequiredService<EmailSender>(),
+        "sms" => provider.GetRequiredService<SmsSender>(),
+        "push" => provider.GetRequiredService<PushSender>(),
+        _ => throw new ArgumentException($"Unknown channel: {channel}")
+    };
+}
+```
+
+Başlık, dil etiketi, satır numaraları ve `Copy` düğmesi tema tarafından
+otomatik olarak ekleniyor; yazının içinde yalnızca standart bir fenced code
+block tanımlıyoruz.

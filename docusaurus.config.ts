@@ -55,7 +55,6 @@ const config: Config = {
         {to: '/', label: 'Home', position: 'left'},
         {to: '/blog', label: 'Writing', position: 'left'},
         {type: 'localeDropdown', position: 'right'},
-        {href: 'https://github.com/mucahito-dev', label: 'GitHub ↗', position: 'right'},
       ],
     },
     colorMode: {
@@ -64,6 +63,7 @@ const config: Config = {
       respectPrefersColorScheme: false,
     },
     prism: {
+      additionalLanguages: ['csharp'],
       theme: {
         plain: {color: '#3b2417', backgroundColor: '#f5eee7'},
         styles: [
@@ -79,6 +79,9 @@ const config: Config = {
           {types: ['string'], style: {color: '#b8d19a'}},
           {types: ['keyword'], style: {color: '#e4a06f'}},
           {types: ['function'], style: {color: '#d8c09f'}},
+          {types: ['class-name', 'return-type'], style: {color: '#4ec9b0'}},
+          {types: ['parameter', 'property'], style: {color: '#9cdcfe'}},
+          {types: ['punctuation', 'operator'], style: {color: '#d4d4d4'}},
         ],
       },
     },
