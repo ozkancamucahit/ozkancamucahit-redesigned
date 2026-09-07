@@ -55,7 +55,6 @@ const config: Config = {
         {to: '/', label: 'Home', position: 'left'},
         {to: '/blog', label: 'Writing', position: 'left'},
         {type: 'localeDropdown', position: 'right'},
-        {href: 'https://github.com/mucahito-dev', label: 'GitHub ↗', position: 'right'},
       ],
     },
     colorMode: {
