@@ -87,18 +87,9 @@ body {
     position: relative;
 }
 
-.theme-code-block {
-    position: relative;
-    overflow: hidden;
-    border: 1px solid #d8c8bc;
-    border-radius: .9rem;
-    background: #f1e9e2;
-    box-shadow: 0 18px 35px rgb(86 49 29 / 10%);
-}
-
-.theme-code-block::before {
+.mucahito-code-block::before {
     position: absolute;
-    z-index: 2;
+    z-index: 4;
     top: 1.2rem;
     left: 1.2rem;
     width: .6rem;
@@ -109,13 +100,32 @@ body {
     content: '';
 }
 
+.theme-code-block {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #d8c8bc;
+    border-radius: .9rem;
+    background: #f1e9e2;
+    box-shadow: 0 18px 35px rgb(86 49 29 / 10%);
+}
+
 .theme-code-block [class*='codeBlockTitle'] {
-    display: none;
+    min-height: 3.5rem;
+    overflow: hidden;
+    padding: 1.2rem 8rem 1.2rem 7rem;
+    border-bottom: 1px solid #d8c8bc;
+    color: #8a6b59;
+    background: #f8f3ee;
+    font: 600 .72rem/1 var(--ifm-font-family-monospace);
+    letter-spacing: .08em;
+    text-align: center;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .theme-code-block [class*='codeBlockContent'] {
     position: static;
-    padding-top: 3.5rem;
 }
 
 .mucahito-code-block[data-language]::after {
@@ -167,7 +177,7 @@ body {
 }
 
 .theme-code-block pre {
-    padding: 1.15rem 1.25rem 1.35rem;
+    padding: 1.15rem 1.25rem 1.35rem .35rem;
 }
 
 .theme-code-block pre code {
@@ -179,14 +189,14 @@ body {
     position: relative;
     display: block;
     min-height: 1.55em;
-    padding-left: 3.25rem;
+    padding-left: 2.15rem;
     counter-increment: code-line;
 }
 
 .theme-code-block pre code .token-line::before {
     position: absolute;
     left: 0;
-    width: 2.25rem;
+    width: 1.45rem;
     color: #a18d80;
     content: counter(code-line);
     text-align: right;
@@ -237,19 +247,24 @@ body {
     .theme-code-block pre {
         overflow-x: auto;
         padding-right: 1rem;
-        padding-left: .85rem;
+        padding-left: .25rem;
     }
 
     .theme-code-block pre code .token-line {
-        padding-left: 2.7rem;
+        padding-left: 1.9rem;
     }
 
     .theme-code-block pre code .token-line::before {
-        width: 1.8rem;
+        width: 1.3rem;
     }
 
     .mucahito-code-block[data-language]::after {
         left: 4rem;
+    }
+
+    .theme-code-block [class*='codeBlockTitle'] {
+        padding-right: 7.5rem;
+        padding-left: 6.5rem;
     }
 }
 
