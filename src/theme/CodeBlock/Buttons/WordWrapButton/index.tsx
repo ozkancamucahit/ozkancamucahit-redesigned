@@ -17,7 +17,7 @@ export default function WordWrapButton({className}: Props): ReactNode {
     <button
       type="button"
       onClick={() => wordWrap.toggle()}
-      className={className}
+      className={`clean-btn${className ? ` ${className}` : ''}`}
       aria-label={title}
       title={title}
     >
