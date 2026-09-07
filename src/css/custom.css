@@ -177,7 +177,7 @@ body {
 }
 
 .theme-code-block pre {
-    padding: 1.15rem 1.25rem 1.35rem .75rem;
+    padding: 1.15rem 1.25rem 1.35rem .35rem;
 }
 
 .theme-code-block pre code {
@@ -189,14 +189,14 @@ body {
     position: relative;
     display: block;
     min-height: 1.55em;
-    padding-left: 2.75rem;
+    padding-left: 2.15rem;
     counter-increment: code-line;
 }
 
 .theme-code-block pre code .token-line::before {
     position: absolute;
     left: 0;
-    width: 1.9rem;
+    width: 1.45rem;
     color: #a18d80;
     content: counter(code-line);
     text-align: right;
@@ -247,15 +247,15 @@ body {
     .theme-code-block pre {
         overflow-x: auto;
         padding-right: 1rem;
-        padding-left: .55rem;
+        padding-left: .25rem;
     }
 
     .theme-code-block pre code .token-line {
-        padding-left: 2.35rem;
+        padding-left: 1.9rem;
     }
 
     .theme-code-block pre code .token-line::before {
-        width: 1.55rem;
+        width: 1.3rem;
     }
 
     .mucahito-code-block[data-language]::after {
