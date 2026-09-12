@@ -12,28 +12,32 @@ export default function Home(): React.JSX.Element {
   const copy = isEnglish
     ? {
         eyebrow: 'Notes from the build',
-        title: 'Thinking in public, one commit at a time.',
+    title: 'One blog. Thoughtful notes. Better products.',
         intro:
           'Developer insights, project retrospectives, and the practical details that usually stay between the lines.',
         latest: 'Latest writing',
         all: 'View all writing',
         read: 'Read article',
-        min: 'min read',
-        page: 'Page',
-        next: 'Next page',
-      }
+    primary: 'Start reading',
+    secondary: 'Browse writing',
+    min: 'min read',
+    page: 'Page',
+    next: 'Next page',
+  }
     : {
-        eyebrow: 'Üretim notları',
-        title: 'Her commit ile biraz daha iyi düşünmek.',
-        intro:
-          'Geliştirici notları, proje retrospektifleri ve genelde satır aralarında kalan pratik detaylar.',
-        latest: 'Son yazılar',
-        all: 'Tüm yazıları gör',
-        read: 'Yazıyı oku',
-        min: 'dk okuma',
-        page: 'Sayfa',
-        next: 'Sonraki sayfa',
-      };
+    eyebrow: 'Üretim notları',
+    title: 'Tek blog. Düşünceli notlar. Daha iyi ürünler.',
+    intro:
+      'Geliştirici notları, proje retrospektifleri ve genelde satır aralarında kalan pratik detaylar.',
+    latest: 'Son yazılar',
+    all: 'Tüm yazıları gör',
+    read: 'Yazıyı oku',
+    primary: 'Okumaya başla',
+    secondary: 'Yazıları gör',
+    min: 'dk okuma',
+    page: 'Sayfa',
+    next: 'Sonraki sayfa',
+  };
   const visiblePosts = posts.filter((post) => !post.locale || post.locale === (isEnglish ? 'en' : 'tr')).slice(0, 6);
 
   return (
@@ -52,9 +56,14 @@ export default function Home(): React.JSX.Element {
               </div>
               <div className={styles.heroAside}>
                 <p>{copy.intro}</p>
-                <Link className={styles.arrowLink} to={isEnglish ? '/blog' : '/tr/blog'}>
-                  {copy.all} <span aria-hidden="true">↗</span>
-                </Link>
+                <div className={styles.actions}>
+                  <Link className={styles.primaryCta} to={isEnglish ? '/blog' : '/tr/blog'}>
+                    {copy.primary}
+                  </Link>
+                  <Link className={styles.secondaryCta} to={isEnglish ? '/blog' : '/tr/blog'}>
+                    {copy.secondary} <span aria-hidden="true">↗</span>
+                  </Link>
+                </div>
               </div>
             </div>
             <div className={styles.rule} />

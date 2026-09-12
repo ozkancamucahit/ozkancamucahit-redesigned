@@ -1,12 +1,14 @@
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+const isGitHubPagesBuild = process.env.GITHUB_ACTIONS === 'true';
+
 const config: Config = {
   title: 'Mucahito',
   tagline: 'Kodun arkasındaki düşünceler.',
   favicon: 'img/favicon.svg',
   url: 'https://ozkancamucahit.github.io',
-  baseUrl: '/ozkancamucahit-redesigned/',
+  baseUrl: isGitHubPagesBuild ? '/ozkancamucahit-redesigned/' : '/',
   organizationName: 'ozkancamucahit',
   projectName: 'ozkancamucahit-redesigned',
   onBrokenLinks: 'throw',
@@ -58,7 +60,7 @@ const config: Config = {
       ],
     },
     colorMode: {
-      defaultMode: 'dark',
+      defaultMode: 'light',
       disableSwitch: false,
       respectPrefersColorScheme: false,
     },
